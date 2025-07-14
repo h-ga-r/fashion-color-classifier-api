@@ -1,10 +1,7 @@
 import cv2
 import numpy as np
 
-# ExtractedColor データクラスをインポート（image_processing.pyからコピーしても良いですが、
-# 共通で使うなら共通ファイルにするか、ここでインポートします）
-# 現状はimage_processing.pyから参照しているので、直接インポートしないでおきます。
-# 必要に応じて後で変更。
+
 # from .image_processing import ExtractedColor # <-- 将来的に必要になるかも
 
 def rgb_to_hsv(rgb_tuple: tuple[int, int, int]) -> tuple[int, int, int]:
@@ -29,7 +26,7 @@ def classify_hsv_color(hsv_tuple: tuple[int, int, int]) -> str: #どの色のカ
     """
     h, s, v = hsv_tuple #h 色相　s 彩度　V　明度
 
-    # 明度と彩度の閾値（これらの値は調整が必要かもしれません）
+    # 明度と彩度の閾値（調整必須）
     # 明度が低い（暗い）場合は黒
     if v < 40: # 暗さの閾値。例: 0-255
         return "黒"
@@ -87,7 +84,7 @@ def classify_extracted_colors(extracted_colors: list) -> list[dict]: # 抽出さ
         })
     return classified_results
 
-# (このモジュールは直接実行しないが、テスト用に残しておく)
+# (テスト用)
 if __name__ == "__main__":
     # テストデータ
     test_colors_data = [

@@ -82,7 +82,7 @@ def suggest_color_combinations(classified_colors: list[dict]) -> list[str]:
     elif main_color_name == "ベージュ":
         suggestions.append("ベージュはナチュラルで優しい印象を与え、オフィススタイルにも最適です。")
 
-    # 検出された複数の色を考慮した提案（簡易版）
+    # 検出された複数の色を考慮した提案（簡易版　今後改良）
     if len(classified_colors) > 1:
         # 2番目に割合が高い色を取得
         secondary_color_data = classified_colors[1]
@@ -100,7 +100,7 @@ def suggest_color_combinations(classified_colors: list[dict]) -> list[str]:
     # 重複する提案を排除し、ユニークなリストにする
     return list(set(suggestions))
 
-# (このモジュールは直接実行しないが、テスト用に残しておく)
+# (テスト用)
 if __name__ == "__main__":
     # テストデータ
     test_classified_colors = [

@@ -72,42 +72,8 @@ def identify_clothing_area(image_np: np.ndarray) -> np.ndarray:
         np.ndarray: 服の領域のみを含む画像（背景は黒または透明）。
     """
     # ここでは簡易的に、画像全体を服の領域と見なします。
-    # 実際のアプリでは、モデルを使って人物や服のセグメンテーションを行う必要があります。
-    # 例: 背景除去 (GrabCut, Deep Learning based Background Removal)
+    # 今後、モデルを使って人物や服のセグメンテーションを行う必要（例: 背景除去 (GrabCut, Deep Learning based Background Removal)）
 
     # 現状は、画像全体を返す。
     return image_np
 
-# (このモジュールは直接実行しないが、テスト用に残しておく)
-if __name__ == "__main__":
-    # テスト用の画像ファイルを読み込む（あなたの環境に合わせてパスを調整してください）
-    # 例: your_fashion_app/test_images/red_shirt.jpg など
-    # test_image_path = "path/to/your/test_image.jpg"
-    # img = cv2.imread(test_image_path)
-
-    # if img is None:
-    #     print(f"Error: Could not read image from {test_image_path}. Please check the path.")
-    # else:
-    #     print(f"Image loaded: {test_image_path}")
-    #     # 服の領域を識別（今は画像全体）
-    #     clothing_area_img = identify_clothing_area(img)
-
-    #     # 支配的な色を抽出
-    #     dominant_colors = extract_dominant_colors(clothing_area_img, num_colors=5)
-
-    #     print("\nDominant Colors:")
-    #     for color in dominant_colors:
-    #         print(f"  RGB: {color.rgb}, Percentage: {color.percentage:.2f}%")
-
-    #     # 結果を可視化（オプション、WSL環境ではXサーバー設定が必要な場合あり）
-    #     # blank_image = np.zeros((100, 500, 3), np.uint8)
-    #     # current_x = 0
-    #     # for color in dominant_colors:
-    #     #     color_bgr = (color.rgb[2], color.rgb[1], color.rgb[0]) # RGBをBGRに変換
-    #     #     width_segment = int(500 * (color.percentage / 100))
-    #     #     cv2.rectangle(blank_image, (current_x, 0), (current_x + width_segment, 100), color_bgr, -1)
-    #     #     current_x += width_segment
-    #     # cv2.imshow("Dominant Colors", blank_image)
-    #     # cv2.waitKey(0)
-    #     # cv2.destroyAllWindows()
-    pass # 実際に何もしない場合は pass を使う
