@@ -113,7 +113,7 @@ async def read_root(): #非同期関数を定義　
                 color: #6c757d; /* 文字色 */
             }
             img {
-                max-width: 70%; /* 画像サイズの調整 */
+                max-width: 30%; /* 画像サイズの調整 */
                 height: auto; /* 画像の高さを調整 */
                 display: block; /* 画像をブロックレベル要素 */
                 margin-top: 20px; /* 画像上部の外側余白 */
